@@ -863,8 +863,14 @@ proc ::rss-synd::cookie_parse {data current} {
 			putlog "\002RSS Eval Error\002: $error"
 		}
 	}
-
-	return $output
+	if {([info exists feed(output-togglefilter)]) && ($feed(output-togglefilter) == 1)} {
+		if { [regexp "$feed(output-filter)" $output] } {
+			return $output
+		}
+	} else {
+		return $output
+	}
+	
 }
 
 proc ::rss-synd::cookie_replace {cookie data} {

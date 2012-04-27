@@ -124,7 +124,14 @@ charset          This is the charset you want the feed to be outputted using.
                  Example: utf-8
                           cp1251
                           iso8859-1
-
+						  
+output-togglefilter		Toggles the filter option on and off
+						0 = Off
+						1 = On
+						
+output-filter	The string to look for in the feed.
+				Only output feed items containing the string
+						  
 Cookies:
 
   Output works on a cookie system, in this case its dynamic so it depends on
